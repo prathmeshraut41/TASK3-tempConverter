@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tempreture Converter</h1>
+    <div class="box">
+    <p>
+        <label>Fahrenheit</label> 
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+        oninput="temperatureConverterFa(this.value)"
+        onchange="temperatureConverterFa(this.value)">
+    </p>
+    <p>Celsius: <span id="outputCelsius"></span></p>
+    <p>
+        <label>Celsius</label> 
+        <input id="inputFahrenheit" type="number" placeholder="Celsius"
+        oninput="temperatureConverterCel(this.value)"
+        onchange="temperatureConverterCel(this.value)">
+    </p>
+    <p>Fahrenheit: <span id="outputFa"></span></p>
+    </div>
+    <script>
+        function temperatureConverterFa(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+        } 
+        function temperatureConverterCel(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputFa").innerHTML = (valNum)*1.8+32;
+        } 
+    </script>
+</body>
+</html>
